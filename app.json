@@ -6,14 +6,12 @@
       "groupName": "dependencies (major)",
       "depTypeList": ["dependencies"],
       "updateTypes": ["major"],
-      "labels": ["update major"],
       "automerge": false
     },
     {
       "groupName": "devDependencies (major)",
       "depTypeList": ["devDependencies"],
       "updateTypes": ["major"],
-      "labels": ["update major"],
       "automerge": false
     },
     {

@@ -14,14 +14,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node }}
       - uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: node-${{ runner.os }}-${{ matrix.node-version }}
+          key: node-${{ runner.os }}-${{ matrix.node }}
       - name: validate
         run: |
           for file in *.json; do
-            echo validate $file
+            echo --- $file ---
             RENOVATE_CONFIG_FILE=$file npx -p renovate -c renovate-config-validator
           done

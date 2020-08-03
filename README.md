@@ -1,11 +1,20 @@
 renovate-config
 ===
 
-for pokutuna perlsonal use
+For pokutuna perlsonal use, put below json on `.github/renovate.json`.
 
-put this json on `.github/renovate.json`
+- Group PRs by update types.
+- Aggressive automerge.
+  - |       | app | lib |
+    | ---   | --- | --- |
+    | major |  -  |  -  |
+    | minor |  ✔ | - (dependencies) <br> ✔ (devDependencies)|
+    | patch |  ✔ | ✔ |
 
-### For app
+
+### app
+
+For applications.
 
 ```json
 {
@@ -15,7 +24,9 @@ put this json on `.github/renovate.json`
 }
 ```
 
-### For lib
+### lib
+
+For libraries.
 
 ```json
 {
@@ -24,3 +35,9 @@ put this json on `.github/renovate.json`
   ]
 }
 ```
+
+
+## Links
+
+- [Renovate Docs | Renovate Docs](https://docs.renovatebot.com/)
+- [hatena/renovate-config: A shareable config preset for Renovate used in Hatena.](https://github.com/hatena/renovate-config)

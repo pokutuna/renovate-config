@@ -1,28 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    ":preserveSemverRanges",
-    "github>pokutuna/renovate-config:common"
-  ],
+  "extends": ["github>pokutuna/renovate-config:common"],
   "packageRules": [
     {
-      "groupName": "dependencies (major)",
+      "groupName": "dependencies (major & minor)",
       "depTypeList": ["dependencies"],
-      "updateTypes": ["major"],
-      "labels": ["update major"],
+      "updateTypes": ["major", "minor"],
       "automerge": false
+    },
+    {
+      "groupName": "dependencies (patch)",
+      "depTypeList": ["dependencies"],
+      "updateTypes": ["patch"],
+      "automerge": true
     },
     {
       "groupName": "devDependencies (major)",
       "depTypeList": ["devDependencies"],
-      "updateTypes": ["major"],
-      "labels": ["update major"],
-      "automerge": false
-    },
-    {
-      "groupName": "dependencies (non-major)",
-      "depTypeList": ["dependencies"],
-      "updateTypes": ["minor","patch", "pin", "digest"],
       "automerge": false
     },
     {
