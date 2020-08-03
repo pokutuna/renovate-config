@@ -4,7 +4,6 @@
     "config:base",
     ":dependencyDashboard"
   ],
-  "timezone": "Asia/Tokyo",
   "labels": [
     "renovate"
   ],
@@ -12,5 +11,9 @@
     "npmDedupe",
     "yarnDedupeHighest",
     "gomodTidy"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    "before 10:00 on Monday"
   ]
 }
