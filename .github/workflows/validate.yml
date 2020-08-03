@@ -19,9 +19,8 @@ jobs:
         with:
           path: ~/.npm
           key: node-${{ runner.os }}-${{ matrix.node-version }}
-      - run: npm install -g renovate
       - name: validate
         run: |
           for file in *.json; do
-            RENOVATE_CONFIG_FILE=$file npx renovate-config-validator
+            RENOVATE_CONFIG_FILE=$file npx -p renovate -c renovate-config-validator
           done
