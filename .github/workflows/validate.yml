@@ -27,7 +27,7 @@ jobs:
           done
       - name: validate usages
         run: |
-          for file in test/*.json; dosx
+          for file in test/*.json; do
             echo --- $file ---
             RENOVATE_CONFIG_FILE=$file npx -p renovate -c renovate-config-validator
           done
