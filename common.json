@@ -3,7 +3,7 @@
   "extends": [
     "config:base",
     ":dependencyDashboard",
-    ":separateMultipleMajorRelease"
+    ":separateMultipleMajorReleases"
   ],
   "pin": {
     "automerge": true
