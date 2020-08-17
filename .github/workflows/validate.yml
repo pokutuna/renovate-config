@@ -19,9 +19,15 @@ jobs:
         with:
           path: ~/.npm
           key: node-${{ runner.os }}-${{ matrix.node }}
-      - name: validate
+      - name: validate presets
         run: |
           for file in *.json; do
+            echo --- $file ---
+            RENOVATE_CONFIG_FILE=$file npx -p renovate -c renovate-config-validator
+          done
+      - name: validate usages
+        run: |
+          for file in test/*.json; dosx
             echo --- $file ---
             RENOVATE_CONFIG_FILE=$file npx -p renovate -c renovate-config-validator
           done
