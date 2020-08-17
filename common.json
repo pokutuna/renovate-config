@@ -2,15 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    ":dependencyDashboard"
+    ":dependencyDashboard",
+    ":separateMultipleMajorRelease"
   ],
-  "labels": [
-    "renovate"
-  ],
+  "pin": {
+    "automerge": true
+  },
   "postUpdateOptions": [
     "npmDedupe",
     "yarnDedupeHighest",
     "gomodTidy"
+  ],
+  "labels": [
+    "renovate"
   ],
   "timezone": "Asia/Tokyo",
   "schedule": [

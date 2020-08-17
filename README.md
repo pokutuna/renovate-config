@@ -1,41 +1,32 @@
 renovate-config
 ===
 
-For pokutuna perlsonal use, put below json on `.github/renovate.json`.
+For pokutuna personal use, put this json to `.github/renovate.json` in a repository.
 
-- Group PRs by update types.
-- Aggressive automerge.
-  - |       | app | lib |
-    | ---   | --- | --- |
-    | major |  -  |  -  |
-    | minor |  ✔ | - (dependencies) <br> ✔ (devDependencies)|
-    | patch |  ✔ | ✔ |
+### single
 
-
-### app
-
-For applications.
+- Single branch for all dependency updates.
 
 ```json
 {
   "extends": [
-    "github>pokutuna/renovate-config:app"
+    "github>pokutuna/renovate-config:single"
   ]
 }
 ```
 
-### lib
+### major-or-else
 
-For libraries.
+- Major updates create single PR.
+- Other updates do aggressive automerge.
 
 ```json
 {
   "extends": [
-    "github>pokutuna/renovate-config:lib"
+    "github>pokutuna/renovate-config:major-or-else"
   ]
 }
 ```
-
 
 ## Links
 

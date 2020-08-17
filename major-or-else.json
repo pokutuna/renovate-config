@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>pokutuna/renovate-config:common"
+  ],
+  "packageRules": [
+    {
+      "groupName": "major",
+      "updateTypes": [
+        "major"
+      ]
+    },
+    {
+      "groupName": "else",
+      "updateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ]
+}
